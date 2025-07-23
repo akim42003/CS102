@@ -1,0 +1,10 @@
+from nltk import *
+import matplotlib.pyplot as plt 
+
+
+
+
+def main():
+    lyrics = open(Harry-Potter-5pg.txt)
+    lyrics.read()
+main()

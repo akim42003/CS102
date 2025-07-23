@@ -1,0 +1,1 @@
+//The "invalid pointer" error occurred because the "insert" function invalidated "it3" since the memory location of the vector was changed which means "it3" pointed to a different location than previous. 

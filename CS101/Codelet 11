@@ -1,0 +1,20 @@
+
+from random import randint
+
+def filtered(data, threshold):
+    new = []
+    for entry in range(len(data)):
+        if abs(data[entry]) < abs(threshold):
+            new.append(data[entry])
+    return new 
+def main():
+    data = []
+    for number in range(10):
+        data.append(randint(-19, 19))
+    print(f"original data: {data}")
+    threshold = 10
+    print(f"threshold: {threshold}")
+    cleared_list = filtered(data, threshold)
+    print(f"result: {cleared_list}")
+
+main()

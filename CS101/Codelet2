@@ -1,0 +1,42 @@
+#Libraries
+from turtle import *
+
+#Screen 
+screen = Screen()
+screen.setup(800, 400)
+screen.bgcolor("midnight blue")
+colormode(255)
+
+#Turtle 
+square = Turtle()
+square.shape("turtle")
+square.resizemode("auto")
+square.pensize(5)
+square.pencolor("yellow")
+square.speed(2)
+
+square.penup()
+square.left(90)
+square.forward(200)
+square.right(90)
+square.pendown()
+
+square.begin_fill()
+for squares in range(4):
+    square.forward(100)
+    square.right(90)
+    square.forward(50)
+    square.right(90)
+    square.forward(100)
+    square.right(90)
+    square.forward(50)
+    square.backward(150)
+    square.right(90)
+    square.forward(50)
+    square.left(90)
+    square.forward(100)
+    square.right(90)
+    square.fillcolor("red")
+square.end_fill()
+
+mainloop()

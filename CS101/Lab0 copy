@@ -1,0 +1,62 @@
+
+
+# Import all elements of the turtle library:
+from turtle import *
+
+# These lines of code setup your turtle's configuration and will
+# be at the top of every program you write with turtles.
+# Set up the graphics window and colors
+screen = Screen()
+screen.setup(800, 400)
+screen.bgcolor("midnight blue")
+colormode(255)
+
+# Create a turtle object and set some of its attributes:
+dawn = Turtle()
+dawn.shape("turtle")
+dawn.resizemode("auto")
+dawn.pensize(5)
+dawn.pencolor("yellow")
+dawn.speed(2)
+
+# Draw a square:
+for move in range(4):
+    dawn.forward(50)
+    dawn.left(90)
+    
+# LOOP A
+size = 146
+for count in range(20):
+     print("count:", count)
+     dawn.forward(size)
+     dawn.left(90)
+     size = size - 5
+# 
+# LOOP B
+# for count in range(200):
+#     print("count:", count)
+#     dawn.forward(count)
+#     dawn.left(59)
+# 
+# LOOP C
+# for count in range(30):
+#     print("count:", count)
+#     dawn.circle(5*count)
+#     dawn.circle(-5*count)
+#     dawn.left(count)
+#     
+
+
+
+
+# This next loop is for later in the lab:
+
+# LOOP D
+# dawn.pensize(20)
+# dawn.up()
+# dawn.goto(-100, 0)
+# dawn.down()
+# 
+# for horiz in range(-100, 100):
+#     dawn.pencolor((255, horiz + 150, 255))
+#     dawn.goto(horiz, 0)

@@ -1,0 +1,26 @@
+/*
+     This is our first CS102 program!
+     Yay!
+*/
+
+#include <iostream>
+
+void send_greeting(int num_times) {
+    for (int i = 0; i < num_times; i += 2) {
+        if (num_times % 2 == 0) {
+            std::cout << "Hello even number!\n";
+        } 
+        else {
+            std::cout << "Hello odd number!\n";
+        }
+    }
+}
+
+int main() {
+    // This is a comment!
+    int num_times = 0;
+    std::cout << "Enter a number of times: ";
+    std::cin >> num_times;
+    send_greeting(num_times);
+    return 0;
+}

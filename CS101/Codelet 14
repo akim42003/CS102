@@ -1,0 +1,22 @@
+from random import randint
+
+def separate(data):
+    odds = []
+    evens = []
+    for entry in data:
+        if (entry%2) == 0:
+            evens.append(entry)
+        else:
+            odds.append(entry)
+    return(odds, evens)
+
+def main():
+    data = []
+    for number in range(15):
+        data.append(randint(1, 9))
+    print(f"original data: {data}")
+    odds, evens = separate(data)
+    print(f"odds : {odds}")
+    print(f"evens: {evens}")
+
+main()

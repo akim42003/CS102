@@ -1,0 +1,29 @@
+#Libraries
+from turtle import *
+import random 
+#Screen 
+screen = Screen()
+screen.setup(800, 400)
+screen.bgcolor("midnight blue")
+colormode(255)
+
+#Turtle 
+square = Turtle()
+square.shape("turtle")
+square.resizemode("auto")
+square.pensize(5)
+square.pencolor("yellow")
+square.speed(2)
+
+colors = ["red", "white", "blue"]
+for num_squares in range(4):
+    size = random.randint(3,7)
+    square.begin_fill()
+    for sides in range(4):
+        square.fillcolor(colors[random.randint(0,2)])
+        square.forward(size * 10)
+        square.left(90)
+    square.end_fill()
+    square.right(90)
+
+exitonclick()

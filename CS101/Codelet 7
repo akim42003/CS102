@@ -1,0 +1,25 @@
+from random import randint
+
+def sum_slice(numbers, left, right):
+    new_num=0
+    for entry in range(right-left+1):
+        new_num = new_num + numbers[left+entry]
+    print("The sum in your slice is " + str(new_num))
+
+def main():
+    # Make an "empty" list that has 10 entries:
+    numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    # Overwrite each 0 with a random integer between 1 and 9:
+    for index in range(10):
+        numbers[index] = randint(1, 9)
+    print(f"The randomized list is {numbers}.")
+    
+    # Ask the user for two index values:
+    left = int(input("Enter the left index: "))
+    right = int(input("Enter the right index: "))
+    
+    sum_slice(numbers, left, right)
+    
+    
+main()

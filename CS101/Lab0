@@ -1,0 +1,57 @@
+#Libraries
+from turtle import *
+import random 
+
+p_type = input("Which planet would you like to create? Pluto is not an answer")
+
+v_planet = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+#Planet drawing conditions
+
+for x in v_planet:
+    if p_type == "Mercury":
+        p_type = int("1")
+    elif p_type == "Venus":
+        p_type = int("2")
+    elif p_type == "Earth":
+        p_type = int("3")
+    elif p_type == "Mars":
+        p_type = int("4")
+    elif p_type == "Jupiter":
+        p_type = int("5")
+    elif p_type == "Saturn":
+        p_type = int("6")
+    elif p_type == "Uranus":
+       p_type = int("7")
+    elif p_type == "Neptune":
+        p_type = int("8")
+    # else:
+    #     p_type = int("0")
+if p_type > 0:
+    #Screen
+    screen = Screen()
+    screen.setup(1080, 1080)
+    #screen.bgpic('./Desktop/photo-1534796636912-3b95b3ab5986.jpg')
+    screen.bgcolor("midnight blue")
+    colormode(255)
+
+    mainloop()
+
+    if p_type == 1:
+        sun = Turtle()
+        sun.shape("circle")
+        sun.resizemode("auto")
+        sun.pensize(2)
+        sun.pencolor("black")
+        sun.speed(3)
+        sun.penup()
+        sun.forward(10)
+        sun.pendown()
+        sun.circle(200)
+        sun.fillcolor("yellow")
+
+        mainloop()
+else: 
+    print("Not a valid planet")
+
+

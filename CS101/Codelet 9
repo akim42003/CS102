@@ -1,0 +1,14 @@
+def larger_than(data, threshold):
+    answer=0
+    for entry in range(7):
+        if threshold < data[entry]:
+            answer = answer +1
+    return answer
+
+def main():
+    data = [4, 8, 2, 2, 9, 1, 6]
+    threshold = 7
+    answer = larger_than(data, threshold)
+    print(f"In {data} there are {answer} entries larger than {threshold}.")
+
+main()

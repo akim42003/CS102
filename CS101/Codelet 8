@@ -1,0 +1,25 @@
+from random import randint
+
+def overlay(list_one, list_two):
+    list_sum = []
+    for num in range(10):
+        entry_3 = list_one[num]+list_two[num]
+        list_sum.append(entry_3)
+    print(f"list_sum is {list_sum}.")
+
+def main():
+    # Make two "empty" lists that have 10 entries:
+    list_one = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    list_two = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    # Overwrite each 0 with a random integer between 1 and 4:
+    for index in range(10):
+        list_one[index] = randint(1, 5)
+        list_two[index] = randint(1, 5)
+        
+    print(f"list_one is {list_one}.")
+    print(f"list_two is {list_two}.")
+    
+    overlay(list_one, list_two)
+    
+main()

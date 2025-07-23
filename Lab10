@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+//All Smaller
+
+//Let A[i] and B[j] be two distinct lists of integers
+//for n < i
+//    for m < j
+//        if A[i] > B[j]
+//            return false 
+//return true
+
+bool all_smaller() {
+    vector<int> a {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> b {10, 20, 30, 40, 50, 60, 70};
+    for (int i : a){
+        for (int n : b){
+            if (i > n) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+void main() {
+    cout << all_smaller() << endl;
+}

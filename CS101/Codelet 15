@@ -1,0 +1,16 @@
+def organize_words_by_size(words, min_size, max_size):
+    words_by_size = {}
+    for size in range(4, 8):
+        words_by_size[size] = []
+        for word in words:
+            if len(word) == size:
+                words_by_size[size].append(word)
+    return words_by_size
+
+
+def main():
+    words = ["carob", "walking", "water", "bowl", "polka", "feast", "musical"]
+    words_by_size = organize_words_by_size(words, 4, 7)
+    print(words_by_size)
+
+main()

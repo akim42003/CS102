@@ -1,0 +1,21 @@
+def get_nouns(pos):
+    nouns_list = []
+    for word in pos:
+        for assign in word:
+            if "NN" in assign:
+                nouns_list.append(word[0])
+            if "NNP" in assign:
+                nouns_list.remove(word[0])
+    return nouns_list
+
+def main():
+    pos = [('Mahit', 'NNP'), ('came', 'VBD'), ('down', 'RB'), ('to', 'TO'), ('the', 'DT'), ('City', 'NNP'),
+           (',', ','), ('heart-planet', 'NN'), ('and', 'CC'), ('capital', 'NN'), ('of', 'IN'), ('the', 'DT'),
+           ('Teixcalaanli', 'NNP'), ('Empire', 'NNP'), (',', ','), ('in', 'IN'), ('a', 'DT'), ('seed-skiff', 'JJ'),
+           (',', ','), ('a', 'DT'), ('bubble', 'NN'), ('of', 'IN'), ('a', 'DT'), ('ship', 'NN'), ('hardly', 'RB'),
+           ('big', 'JJ'), ('enough', 'RB'), ('for', 'IN'), ('her', 'PRP$'), ('body', 'NN'), ('and', 'CC'),
+           ('her', 'PRP$'), ('luggage', 'NN'), ('both', 'DT'), ('.', '.')]
+    nouns_list = get_nouns(pos)
+    print(nouns_list)
+
+main()

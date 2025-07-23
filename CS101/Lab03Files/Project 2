@@ -1,0 +1,91 @@
+from cs101audio import *
+import random
+
+def melody(key, tempo):
+    top = Audio()
+    if key == "C":
+        scale = ["C4", "D4", "E4", "F4", "G4", "A4", "B4"]
+    if key == "D":
+        scale = ["D4", "E4", "F#4", "G4", "A4" , "B4", "C#5"]
+    if key == "E":
+        scale = ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5"]
+    if key == "F":
+        scale = ["F4", "G4", "A4", "Bb4", "C5", "D5", "E5"]
+    if key == "G":
+        scale = ["G4", "A4", "B4", "C5", "D5", "E5", "F#5"]
+    if key == "A":
+        scale = ["A4", "B4", "C#5", "D5", "E5", "F#5", "G#5"]
+    if key == "B":
+        scale = ["B4", "C#5", "D#5", "E5", "F#5", "G#5", "A#5"]
+    
+    for point in range(60):
+        time = random.randint(0,int((60/tempo)*1000))
+        note = scale[random.randint(0,6)]
+        lead = generate_music_note(note, time, "Sine", -5)
+        top = top + lead
+
+    return top
+        
+def harmony(key, tempo):
+    middle = Audio()
+    if key == "C":
+        scale = ["E4", "F#4", "G#4", "A4", "B4", "C#5", "D#5"]
+    if key == "D":
+        scale = ["F4", "G4", "A4", "Bb4", "C5", "D5", "E5"]
+    if key == "E":
+        scale = ["G4", "A4", "B4", "C5", "D5", "E5", "F#5"]
+    if key == "F":
+        scale = ["A4", "B4", "C#5", "D5", "E5", "F#5", "G#5"]
+    if key == "G":
+        scale = ["B4", "C#5", "D#5", "E5", "F#5", "G#5", "A#5"]
+    if key == "A":
+        scale = ["C5", "D5", "E5", "F5", "G5", "A5", "B5"]
+    if key == "B":
+        scale = ["D5", "E5", "F#5", "G5", "A5" , "B5", "C#6"]
+    
+    for tone in range(60):
+        time = random.randint(0, int((60/tempo)*1000))
+        note_2 = scale[random.randint(0,6)]
+        harm = generate_music_note(note_2, time, "Triangle", -12)
+        middle = middle + harm
+
+    return middle
+        
+def bass(key, tempo):
+    bottom = Audio()
+    if key == "C":
+        scale = ["C2", "D2", "E2", "F2", "G2", "A2", "B2"]
+    if key == "D":
+        scale = ["D2", "E2", "F#2", "G2", "A2" , "B2", "C#2"]
+    if key == "E":
+        scale = ["E2", "F#2", "G#2", "A2", "B2", "C#2", "D#2"]
+    if key == "F":
+        scale = ["F2", "G2", "A2", "Bb2", "C3", "D3", "E3"]
+    if key == "G":
+        scale = ["G2", "A2", "B2", "C3", "D3", "E3", "F#3"]
+    if key == "A":
+        scale = ["A2", "B2", "C#3", "D3", "E3", "F#3", "G#3"]
+    if key == "B":
+        scale = ["B2", "C#3", "D#3", "E3", "F#3", "G#3", "A#3"]
+    
+    for tone in range(60):
+        time = random.randint(0,int((60/tempo)*1000))
+        note_3 = scale[random.randint(0,6)]
+        low = generate_music_note(note_3, time, "Square", -19)
+        bottom = bottom + low
+    
+    return bottom
+
+def main():
+    key = input("what whole tone key (A, B, C, D, E, F ,G) would you like to play in?")
+    tempo = int(input("What tempo (bpm) would you like?"))
+    
+    top = melody(key, tempo)
+    middle = harmony(key, tempo)
+    bottom = bass(key, tempo)
+
+    top.overlay(middle, True)
+    top.overlay(bottom, True)
+    top.play()
+
+main()

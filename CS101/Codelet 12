@@ -1,0 +1,16 @@
+from random import randint
+
+def get_big_list(target):
+    data = []
+    while sum(data) < target:
+        data.append(randint(1, 2))
+        if sum(data) > target:
+            return data
+
+def main():
+    target = 10
+    print(f"target: {target}")
+    result = get_big_list(target)
+    print(f"result: {result}")
+
+main()

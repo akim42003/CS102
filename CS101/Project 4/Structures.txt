@@ -1,0 +1,12 @@
+DT
+JJ
+NN
+PRP
+DT
+JJ
+JJ
+NN
+VBZ
+PRP
+DT
+NN
